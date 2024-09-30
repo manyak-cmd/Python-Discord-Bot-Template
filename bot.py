@@ -186,6 +186,7 @@ class DiscordBot(commands.Bot):
         """
         This will just be executed when the bot starts the first time.
         """
+        
         self.logger.info(f"Logged in as {self.user.name}")
         self.logger.info(f"discord.py API version: {discord.__version__}")
         self.logger.info(f"Python version: {platform.python_version()}")

